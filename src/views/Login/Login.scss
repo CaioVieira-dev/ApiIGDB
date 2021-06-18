@@ -1,0 +1,100 @@
+.login{
+    width: 674px;
+    height:721px;
+    background-color: #3C3FBC;
+    border-radius:64px ;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+
+    text-align: center;
+    padding:56px;
+
+    display:flex;
+    flex-direction: column;
+
+    h2{
+        font-size: 48px;
+        
+    }
+    .row{ 
+        display: flex;
+        justify-content:space-between;
+        margin-top:51px;
+        span{
+            font-size: 24px;
+
+            a{
+                color: #C98948;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:hover{
+                    color: lighten(#C98948,10%);
+                }
+            }
+        }
+    }
+    form{
+        width: 100%;
+        margin-top: 32px;
+        label{
+            text-align:left;
+            width: 100%;
+            display: inline-block;
+            font-size: 20px;
+            &:last-of-type{
+                margin-top: 18px;
+            }
+
+        }
+        input{
+            margin-top: 10px;
+            width: 100%;
+            height:50px;
+        }
+
+        button{
+            width:340px;
+            height:60px;
+            background-color: #9C9EF9;
+            color: #F1F1FF;
+            font-size: 24px;
+            border-radius: 10px;
+            border: 0;
+            outline:0;
+            margin-top: 51px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            &:hover{
+                background-color:darken(#9C9EF9,5%);
+            }
+        }
+    }
+    button.gLogin{
+        width:340px;
+        height:60px;
+        background-color: #9C9EF9;
+        color: #F1F1FF;
+        font-size: 24px;
+        border-radius: 10px;
+        border: 0;
+        outline:0;
+        margin-top: 16px;
+        cursor: pointer;
+        
+        align-self: center;
+
+        padding: 0 10px;
+        display: flex;
+        justify-content:space-evenly;
+        align-items:center;
+        &:hover{
+            background-color:darken(#9C9EF9,5%);
+        }
+
+    }
+    
+
+}

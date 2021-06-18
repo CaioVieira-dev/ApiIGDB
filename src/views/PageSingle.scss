@@ -1,0 +1,46 @@
+$bg-dark:#000129;
+$text-light:#DEDFE5;
+
+.PageSingle{
+    margin:0 7.65625%;
+    .game{
+        margin-top:40px;
+        width: 100%;
+        height:800px;
+        overflow: hidden;
+        position:relative;
+        img{
+            object-fit: contain;
+            width: 100%;
+            filter:blur(8px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+        }
+
+        .gameInfo{
+            max-width: 660px;
+            color:$text-light;
+            z-index: 2;
+            position: absolute;
+            left:0;
+            top: 0;
+
+            background-color: rgba(0,0,0,.3);
+            background: linear-gradient(90deg, rgba(0,1,41,1) 0%, rgba(9,9,121,0.5438550420168067) 66%, rgba(0,67,80,0) 100%);
+            height:100%;
+
+            padding: 30px;
+            h2{
+                font-size:36px;
+            }
+
+            p{
+                margin-top: 20px;
+                font-size: 24px;
+                padding-right: 30px;
+            }
+        }
+    }
+}

@@ -4,30 +4,7 @@ $text-light:#DEDFE5;
     margin:0 7.65625%;
 
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        align-items: center;
-        h1{
-            font-size: 36px;
-        }
-        
-        ul{
-            list-style-type: none;
-            display: flex;
-
-            li{
-                font-size: 24px;
-                margin-left: 30px;
-                cursor: pointer;
-                
-                &:hover{
-                    text-decoration:underline;
-                }
-            }
-        }
-    }
+    
 
     main{
         margin-top: 40px;
@@ -158,62 +135,80 @@ $text-light:#DEDFE5;
 
             .carrousel{
                 margin: 30px 0;
-                display:flex;
-                justify-content:space-between;
-
-                .card{
-                    background-color:white;
-                    width: 240px;
-                    height:330px;
-                    display: inline-block;
-                    position:relative;
-
-                    overflow: hidden;
-                    img.thumb{
-                        height: 100%;
-                    }
-
-                    .overlay{
-                        position:absolute;
-                        bottom: 0px;
-                        left: 0;
-                        width: 100%;
-                        background-color:white;
-                        padding: 8px;
-                        .gameTitle{
-                            font-size: 16px;
-                            color:#000129;
-                            padding-left:8px;
-                            overflow:hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                        }
-                    }
-
-                    .Control{
-                        width:80px;
-                        height: 100px;
-                        background-color:gray;
-                        position: absolute;
-                        top:50%;
-                        transform:translateY(-50%);
-
-                        display:flex;
-                        justify-content:center;
-                        align-items:center;
-                        z-index: 10;
-                        
-                    }
-                    .left.Control{
-                        left:0;
-                        
-                    }
-                    .right.Control{
-                            right:0;                  
-                    }
-
-    
+                height:330px;
+                width: 100%;
+                overflow: hidden;
+               position:relative;
+                .container{
+                    display:flex;
+                    transition: transform 0.5s ease-in-out;
+                    transform: translateX(0);
+        
                     
+
+                    .card{
+                        margin-right: 30px;
+                        flex-shrink: 0;
+                        background-color:white;
+                        width: 243px;
+                        height:330px;
+                        
+                        overflow: hidden;
+                        position:relative;
+                        &:last-child{
+                            margin-right:0;
+                        }
+                        img.thumb{
+                            object-fit: cover;
+                            
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            transform:translate(-50%,-50%);
+                        }
+    
+                        .overlay{
+                            position:absolute;
+                            bottom: 0px;
+                            left: 0;
+                            width: 100%;
+                            background-color:white;
+                            padding: 8px;
+                            .gameTitle{
+                                font-size: 16px;
+                                color:#000129;
+                                padding-left:8px;
+                                overflow:hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }    
+                    }  
+                }
+                .Control{
+                    cursor:pointer;
+                    width:80px;
+                    height: 100px;
+                    background-color:gray;
+                    position: absolute;
+                    top:50%;
+                    transform:translateY(-50%);
+
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    z-index: 10;
+                    img.Control{
+                        height:30px;
+                    }
+                }
+                
+                .left.Control{
+                    left:0;
+                    
+                }
+                .right.Control{
+                        right:0;                  
                 }
             }
         }
