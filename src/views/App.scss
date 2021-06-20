@@ -1,5 +1,6 @@
 $bg-dark:#000129;
 $text-light:#DEDFE5;
+$border-color: #3C3FBC;
 .App{
     margin:0 7.65625%;
 
@@ -13,9 +14,11 @@ $text-light:#DEDFE5;
         section.genres{
             width:380px;
             max-height: 675px;
+            height: 100%;
             overflow-y: auto;
             display: inline-block;
             vertical-align: top;
+            border: 10px solid $border-color;
 
             scrollbar-width: auto;
             scrollbar-color: #2022ab $bg-dark;
@@ -83,10 +86,14 @@ $text-light:#DEDFE5;
             margin-left: 30px;
             max-width: calc(100% - 410px);
             width: 100%;
-
-
+            max-height:675px;
+            height:100%;
+            border: 10px solid $border-color;
+            overflow: hidden;
             img{
-                width:100%;
+                width: 100%;
+                height: 100%;
+                object-fit:fill;
             }
             .desc{
                 z-index: 2;
@@ -139,6 +146,8 @@ $text-light:#DEDFE5;
                 width: 100%;
                 overflow: hidden;
                position:relative;
+               background-color:#0B0D6B;
+               border: 10px solid $border-color;
                 .container{
                     display:flex;
                     transition: transform 0.5s ease-in-out;
@@ -169,7 +178,7 @@ $text-light:#DEDFE5;
     
                         .overlay{
                             position:absolute;
-                            bottom: 0px;
+                            bottom: 20px;
                             left: 0;
                             width: 100%;
                             background-color:white;
