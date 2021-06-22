@@ -6,10 +6,11 @@ import Header from './components/Header/Header'
 import './components/Header/Header.scss';
 import './App.scss';
 
+import { Carrousel } from './components/Carrousel/Carrousel'
+
 type CardInfo = {
     title: string,
     thumb: string,
-
 }
 
 const genresRequestInfo = [
@@ -197,72 +198,6 @@ for (let i = 0; i < gameRequestInfo.length; i++) {
 }
 
 
-const Card = (props: CardInfo) => {
-    return (
-        <div className="card">
-            <img className="thumb" src={props.thumb} alt="" />
-            <div className="overlay">
-                <p className="gameTitle">{props.title}</p>
-            </div>
-        </div>
-    )
-}
-
-const Carrousel = () => {
-    const [index, setIndex] = useState([0, 6]);
-    const carrouselRef = useRef<HTMLDivElement>(null);
-    const [games, setGames] = useState<CardInfo[]>(gamesF)
-
-    const maxCards = 9;
-
-    const handleClick = (dir: number) => {
-        console.log(index)
-        if (dir === -1) {
-            //to left
-
-            setIndex([index[0] - 1, index[1] - 1])
-            if (index[0] <= 0) {
-                setIndex([0, 6])
-            }
-        }
-        if (dir === 1) {
-            //to left
-
-            setIndex([index[0] + 1, index[1] + 1])
-            if (index[1] >= maxCards) {
-                setIndex([maxCards - 6, maxCards])
-            }
-        }
-
-    }
-
-    useEffect(() => {
-
-        carrouselRef.current.style.transform = `translateX(-${(index[0] * 243) + (index[0] * 30)}px)`;
-
-
-        console.log(index[0] * 243)
-    }, [index]);
-
-
-
-
-
-    return (
-        <div className="carrousel">
-            <div onClick={() => handleClick(-1)} className="Control left"><img src="/images/arrowLeft.svg" alt="" /></div>
-            <div onClick={() => handleClick(1)} className="Control right" ><img src="/images/arrowRight.svg" alt="" /></div>
-            <div ref={carrouselRef} className="container">
-
-                {games.map((games, i) => <Card key={i} title={games.title} thumb={games.thumb} />)}
-
-
-            </div>
-
-        </div>
-    )
-}
-
 const Genres = () => {
 
     return (
@@ -293,7 +228,7 @@ function App() {
                 </section>
                 <section className="popularGames">
                     <h2>Jogos populares:</h2>
-                    <Carrousel />
+                    <Carrousel games={gamesF} />
 
                 </section>
             </main>

@@ -210,6 +210,10 @@ $border-color: #3C3FBC;
                     img.Control{
                         height:30px;
                     }
+                    &.disabled{
+                        opacity: 0.5;
+                        cursor:default;
+                    }
                 }
                 
                 .left.Control{
